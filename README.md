@@ -1,2 +1,2 @@
 # elemotion
-Web page animation
+Web page animation frame
