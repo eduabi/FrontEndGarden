@@ -1,0 +1,118 @@
+/* 两栏布局方法1 :设置了float的元素，父元素需要清除浮动*/
+.body-container1 {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.left-panel1 {
+    float: left;
+    width: 300px;
+    height: 100%;
+    background: #ffc952;  
+}
+.right-panel1 {
+    margin-left: 300px;
+    height: 100%;
+    min-width: 300px;
+    background: #ff7473;  
+}
+/* 两栏布局方法2 */
+.body-container2 {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.left-panel2 {
+    min-width: 300px;
+    height: 100%;
+    background: #ffc952;  
+}
+.right-panel2 {
+    flex: 1;
+    height: 100%;
+    min-width: 300px;
+    background: #ff7473;  
+}
+/* 两栏布局方法3 */
+.body-container3 {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.left-panel3 {
+    position: absolute;
+    min-width: 300px;
+    height: 100%;
+    background: #ffc952;  
+}
+.right-panel3 {
+    position: absolute;
+    height: 100%;
+    left: 300px;
+    min-width: 300px;
+    right: 0;
+    background: #ff7473;  
+}
+/* 两栏布局方法4 */
+.body-container4 {
+    font-size: 0;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-sizing: content-box;
+    overflow: auto;
+}
+.left-panel4 {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    box-sizing: border-box;
+    min-width: 300px;
+    height: 100%;
+    background: #ffc952;  
+}
+.right-panel4 {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    box-sizing: border-box;
+    height: 100%;
+    min-width: 300px;
+    width: calc(100% - 300px);
+    background: #ff7473; 
+}
+
+/* 两栏布局方法5 */
+.body-container5 {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: start;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-sizing: content-box;
+    overflow: auto;
+}
+.left-panel5 {
+    grid-column: 1;
+    box-sizing: border-box;
+    min-width: 300px;
+    height: 100%;
+    background: #ffc952; 
+}
+.right-panel5 {
+    grid-column: 2;
+    margin-left: 150px;
+    box-sizing: border-box;
+    height: 100%;
+    min-width: 300px;
+    background: #ff7473;
+}
