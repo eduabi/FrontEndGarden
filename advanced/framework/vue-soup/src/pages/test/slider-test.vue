@@ -1,6 +1,6 @@
 <template>
     <div class="test">
-        <Slider ref="mySlider" v-model="valueList" :tip-format="formatsliderTip" @on-change="valueChange" @on-input="valueChange" range></Slider>
+        <Slider ref="mySlider" :value="valueList" :tip-format="formatsliderTip" @on-change="valueChange" @on-input="valueChange" range></Slider>
         <div ref="cardModal" class="card-modal"></div>
         <!-- <button @click="saySlider">dfsdf</button> -->
     </div>
@@ -16,6 +16,15 @@ export default {
       }
     }
   },
+  created(){
+      debugger
+      console.log("created")
+     //更新值
+  },
+  mounted(){
+    debugger
+    console.log("mounted")
+  },
   data() {
     return {
       startNumber: "",
@@ -24,12 +33,17 @@ export default {
       valueList: this.initNumList
     };
   },
+  watch: {
+    initNumList(newVal){
+      debugger
+      this.valueList = newVal
+    }
+  },
   methods: {
     formatsliderTip(params) {
       return params;
     },
     saySlider() {
-        debugger
       let _ele = $(this.$refs.mySlider.$el).find(".ivu-slider-button-wrap")[1];
       $(this.$refs.cardModal).attr("style", $(_ele).attr("style"));
     },
@@ -65,7 +79,7 @@ export default {
     background: #14dc1a;
   }
   /deep/.ivu-slider-button-wrap {
-      z-index: 900;
+    z-index: 900;
   }
   .card-modal {
     position: relative;
